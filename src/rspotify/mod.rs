@@ -1,10 +1,16 @@
 // ------- Already implemented (simplified) -------
 
 pub mod clients;
+pub mod endpoints;
 
 use std::collections::HashMap;
 
 pub use clients::{ClientCredentialsSpotify, CodeAuthPKCESpotify, CodeAuthSpotify};
+
+pub mod prelude {
+    pub use super::clients::{BaseClient, OAuthClient};
+    pub use super::endpoints::{BaseEndpoints, OAuthEndpoints};
+}
 
 #[derive(Clone, Debug)]
 pub struct Credentials;
@@ -20,8 +26,4 @@ impl HTTPClient {
     pub fn request(&self, params: HashMap<String, String>) {
         println!("Performed request with params {:?}", params);
     }
-}
-
-pub mod prelude {
-    pub use super::clients::{BaseClient, BaseEndpoints, OAuthClient, OAuthEndpoints};
 }

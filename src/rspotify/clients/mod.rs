@@ -1,3 +1,7 @@
+//! Separate module for client implementations, currently the client credentials
+//! flow, code authentication, and code authentication with PKCE. This also
+//! declares the minimum required methods for the different kinds of clients.
+
 // -------- To be discussed --------
 
 pub mod client_creds;
@@ -36,18 +40,4 @@ pub trait BaseClient {
 
 pub trait OAuthClient {
     fn get_oauth(&self) -> &OAuth;
-}
-
-pub trait BaseEndpoints: BaseClient {
-    fn base_endpoint(&self) {
-        println!("Performing base request");
-        self.endpoint_request();
-    }
-}
-
-pub trait OAuthEndpoints: BaseClient + OAuthClient {
-    fn user_endpoint(&self) {
-        println!("Performing OAuth request");
-        self.endpoint_request();
-    }
 }
