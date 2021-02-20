@@ -27,8 +27,8 @@ impl BaseClient for ClientCredentialsSpotify {
         &self.http
     }
 
-    fn get_token(&self) -> &Token {
-        self.tok.as_ref().unwrap()
+    fn get_token(&self) -> Option<&Token> {
+        self.tok.as_ref()
     }
 
     fn get_creds(&self) -> &Credentials {

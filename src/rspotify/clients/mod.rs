@@ -16,7 +16,7 @@ pub use code_auth_pkce::CodeAuthPKCESpotify;
 
 pub trait BaseClient {
     fn get_http(&self) -> &HTTPClient;
-    fn get_token(&self) -> &Token;
+    fn get_token(&self) -> Option<&Token>;
     fn get_creds(&self) -> &Credentials;
 
     // Existing
@@ -29,7 +29,7 @@ pub trait BaseClient {
     // Existing
     fn endpoint_request(&self) {
         let mut params = HashMap::new();
-        params.insert("token".to_string(), self.get_token().0.clone());
+        params.insert("token".to_string(), self.get_token().unwrap().0.clone());
         self.request(params);
     }
 }
