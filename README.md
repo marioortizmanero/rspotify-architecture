@@ -41,21 +41,24 @@ the discussion.
 
   Anyhow, if this could be solved with type safety at compile time it would be
   awesome. This could work by having an authenticator object that returns the
-  actual client:
+  actual client once it's successful:
 
-  * `Authenticator::new()`
-  * `Authenticator::prompt_for_user_token() -> OAuthClient`
-  * `OAuthClient::endpoint()`
+  1. `Authenticator::new()`
+  2. `Authenticator::prompt_for_user_token() -> OAuthClient`
+  3. `OAuthClient::endpoint()`
 
   This is currently quite hard to implement because the authenticator may be
   required multiple times, like in the case of an automatically refreshing
   token. The method that returns the client (`prompt_for_user_token` for
-  example) is required to end the lifetime of `Authenticator` because the HTTP
+  example) will end the lifetime of `Authenticator` because the internal HTTP
   client has to be moved to the new client, so it can't be reused.
 
   To use a single HTTP client throughout the entire execution of the program,
   it would have to be passed from the Spotify client to the Authenticator and
-  back continuously, which doesn't seem trivial.
+  back continuously, which doesn't seem trivial. I still have to investigate on
+  this because the whole "auto refreshing token" part seems impossible without a
+  `Cell` or `Mutex` anyway (see
+  [rspotify/#4](https://github.com/ramsayleung/rspotify/issues)).
 
 ## Possible improvements
 
