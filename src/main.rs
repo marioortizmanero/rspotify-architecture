@@ -1,12 +1,7 @@
 mod rspotify;
 
 use rspotify::{
-    prelude::*,
-    Credentials,
-    OAuth,
-    ClientCredentialsSpotify,
-    CodeAuthSpotify,
-    CodeAuthPKCESpotify,
+    prelude::*, ClientCredentialsSpotify, CodeAuthPKCESpotify, CodeAuthSpotify, Credentials, OAuth,
 };
 
 fn main() {
