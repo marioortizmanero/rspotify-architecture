@@ -10,11 +10,16 @@ more about the discussion of the architecture.
 
 * Type safety to separate between the authentication methods (i.e. you can't
   call an user-authenticated endpoint if the authentication process is the basic
-  one).
+  one). With this the `InvalidAuth` variant may be removed.
 * Improved flexibility as much as possible for future clients and authentication
   methods.
 * The code is more nicely distributed. The `client.rs` file is currently 2200
-  lines long.
+  lines long. Endpoints and methods for different authentication methods are
+  also mixed up in the same files.
+* Allows to get rid of the builder pattern for the clients, as they can be
+  initialized with custom methods instead of with a single client. The builder
+  pattern could actually be removed completely as it's not really necessary for
+  `Token`, `Credentials`, etc (to be considered).
 
 ## Disadvantages
 
