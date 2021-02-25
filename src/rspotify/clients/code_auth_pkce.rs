@@ -36,11 +36,9 @@ impl BaseClient for CodeAuthPKCESpotify {
         &self.creds
     }
 }
-impl BaseEndpoints for CodeAuthPKCESpotify {}
 
 impl OAuthClient for CodeAuthPKCESpotify {
     fn get_oauth(&self) -> &OAuth {
         &self.oauth
     }
 }
-impl OAuthEndpoints for CodeAuthPKCESpotify {}

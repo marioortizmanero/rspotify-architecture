@@ -1,7 +1,6 @@
 // ------- Already implemented (simplified) -------
 
 pub mod clients;
-pub mod endpoints;
 
 use std::collections::HashMap;
 
@@ -9,7 +8,6 @@ pub use clients::{ClientCredentialsSpotify, CodeAuthPKCESpotify, CodeAuthSpotify
 
 pub mod prelude {
     pub use super::clients::{BaseClient, OAuthClient};
-    pub use super::endpoints::{BaseEndpoints, OAuthEndpoints};
 }
 
 #[derive(Clone, Debug)]

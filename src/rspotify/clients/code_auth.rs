@@ -36,7 +36,6 @@ impl BaseClient for CodeAuthSpotify {
         &self.creds
     }
 }
-impl BaseEndpoints for CodeAuthSpotify {}
 
 // This could also be a macro (less important)
 impl OAuthClient for CodeAuthSpotify {
@@ -44,4 +43,3 @@ impl OAuthClient for CodeAuthSpotify {
         &self.oauth
     }
 }
-impl OAuthEndpoints for CodeAuthSpotify {}

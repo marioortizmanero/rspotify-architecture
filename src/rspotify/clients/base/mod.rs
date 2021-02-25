@@ -9,5 +9,5 @@
 pub mod base;
 pub mod oauth;
 
-pub use base::BaseEndpoints;
-pub use oauth::OAuthEndpoints;
+pub use base::BaseClient;
+pub use oauth::OAuthClient;

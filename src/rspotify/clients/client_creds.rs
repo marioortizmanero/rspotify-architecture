@@ -35,4 +35,3 @@ impl BaseClient for ClientCredentialsSpotify {
         &self.creds
     }
 }
-impl BaseEndpoints for ClientCredentialsSpotify {}
