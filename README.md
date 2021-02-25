@@ -26,7 +26,7 @@ the discussion.
 ## Disadvantages
 
 * Requires a `prelude` module to have quick access to the traits in order to use
-  the endpoints (see the `BaseEndpoints` and `OAuthEndpoints` traits).
+  the endpoints (see the `BaseClient` and `OAuthClient` traits).
 
   This might not be that big of a deal because we can take advantage of it and
   also include the basic parts of the library in there (the client structs, auth
@@ -63,7 +63,5 @@ the discussion.
 ## Possible improvements
 
 * Converting between the different clients?
-* Macros to implement `BaseClient`, `BaseEndpoints`, `OAuthClient` and
-  `OAuthClient`?
 * When this is final, a diagram of Rspotify's architecture should be made for
   new contributors.
