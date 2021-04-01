@@ -5,6 +5,7 @@
 // -------- To be discussed --------
 
 pub mod base;
+pub mod token;
 pub mod client_creds;
 pub mod code_auth;
 pub mod code_auth_pkce;
